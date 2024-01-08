@@ -7,7 +7,6 @@ function manufacture(gifts, materials) {
             }
         }
         result.push(gifts[i]);
-
     }
     return result;
 }
