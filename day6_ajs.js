@@ -3,14 +3,15 @@ function maxDistance(movements) {
         return 0;
     }
     let result = 0;
-    let direction =  movements.at(0);
-    for (let i = 0; i < movements.length; ++i) {
-        if (movements[i] === direction || movements[i] === '*') {
-            ++result;
-        } else {
-            --result;
-        }
+    directions = {
+        "<": 0,
+        ">": 0,
+        "*": 0
     }
+    for (const mv of movements) {
+        directions[mv] += 1;
+    }
+    result = Math.abs(directions["<"] - directions[">"]) + directions["*"]
     return result;
 }
 
