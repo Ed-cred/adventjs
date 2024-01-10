@@ -15,6 +15,5 @@ function createChristmasTree(ornaments, height) {
     tree += " ".repeat(height - 1) + "|\n";
     return tree;
 }
-
 console.log(createChristmasTree("123", 4));
 console.log(createChristmasTree("*@o", 3));
