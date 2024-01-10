@@ -1,7 +1,7 @@
 function createChristmasTree(ornaments, height) {
     let tree = "";
-    const countOrnaments = (height * (height + 1)) / 2;
-    const allOrnaments = ornaments.repeat(countOrnaments);
+    const allOrnaments = ornaments
+    .repeat((height * (height + 1)) / 2);
     let lastIdx = 0;
     for (let i = 1; i <= height; ++i) {
         const spaces = " ".repeat(height - i);
@@ -12,8 +12,7 @@ function createChristmasTree(ornaments, height) {
         lastIdx += i;
         tree += spaces + ornamentRow + "\n";
     }
-    let base = " ".repeat(height - 1) + "|\n";
-    tree += base;
+    tree += " ".repeat(height - 1) + "|\n";
     return tree;
 }
 
