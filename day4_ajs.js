@@ -2,6 +2,7 @@ function decode(message) {
   let init, end;
   while (init !== -1 && end !== -1) {
     init = message.lastIndexOf("(");
+
     end = message.indexOf(")", init);
     const msg = message.substring(init, end + 1);
     if (msg === "") return message;
