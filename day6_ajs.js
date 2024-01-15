@@ -3,6 +3,7 @@ function maxDistance(movements) {
         return 0;
     }
     let result = 0;
+
     let directions = {
         "<": 0,
         ">": 0,
@@ -11,6 +12,7 @@ function maxDistance(movements) {
     for (const mv of movements) {
         directions[mv] += 1;
     } 
+
     result = Math.abs(directions["<"] - directions[">"]) + directions["*"]
     return result;
 }
