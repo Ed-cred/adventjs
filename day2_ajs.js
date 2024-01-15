@@ -1,15 +1,12 @@
 function manufacture(gifts, materials) {
     const result = [];
     for (const i in gifts) {
-        let count = 0
         for (let char of gifts[i]) {
-            if (materials.includes(char)) {
-                ++count;
+            if (!materials.includes(char)) {
+                return result;
             }
         }
-        if (count == gifts[i].length) {
-            result.push(gifts[i]);
-        }
+        result.push(gifts[i]);
     }
     return result;
 }
