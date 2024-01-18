@@ -33,7 +33,7 @@ function drawClock(time) {
   
     placeDigits(padAndSplitDigits(minutes), 10);
   
-    return clock.map(row => row.join(''));
+    return clock;
 }
 console.log(drawClock("01:30")); // ️
 /*
