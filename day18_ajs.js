@@ -12,17 +12,21 @@ function drawClock(time) {
     9: ["***", "* *", "* *", "***", "  *", "  *", "***"],
     ":": [" ", " ", "*", " ", "*", " ", " "],
   };
-  const res = digitMapping[time[0]].map((row, pos) => [
-    ...row,
-    " ",
-    ...digitMapping[time[1]][pos],
-    " ",
-    ...digitMapping[":"][pos],
-    " ",
-    ...digitMapping[time[3]][pos],
-    " ",
-    ...digitMapping[time[4]][pos]
-  ]);
+  const res = [];
+  digitMapping[time[0]].forEach((row, pos) => {
+    const combinedString =
+      row +
+      " " +
+      digitMapping[time[1]][pos] +
+      " " +
+      digitMapping[":"][pos] +
+      " " +
+      digitMapping[time[3]][pos] +
+      " " +
+      digitMapping[time[4]][pos];
+
+    res.push([...combinedString]);
+  });
   return res;
 }
 console.log(drawClock("01:30")); // ️
