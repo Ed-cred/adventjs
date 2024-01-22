@@ -2,6 +2,9 @@ function revealSabotage(store) {
   for (let i = 0; i < store.length; ++i) {
     for (let j = 0; j < store[0].length; ++j) {
       const element = store[i][j];
+      if (element === "*") {
+        continue;
+      }
       //turn the booleans into numbers for computing the count
       const x = +(store[i - 1]?.[j - 1] === "*") + +(store[i - 1]?.[j] === "*");
       const y = +(store[i - 1]?.[j + 1] === "*") + +(store[i]?.[j - 1] === "*");
