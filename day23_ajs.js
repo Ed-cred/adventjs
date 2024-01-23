@@ -1,19 +1,18 @@
 function organizeChristmasDinner(dishes) {
-  const ingredients = {}
+  const ingredients = {};
   for (const [dish, ...dishIngredients] of dishes) {
     for (const ingredient of dishIngredients) {
-        if (ingredients[ingredient]){
-            ingredients[ingredient].push(dish);
-        } else {
-            ingredients[ingredient] = [dish];
-        }
-        
+      if (ingredients[ingredient]) {
+        ingredients[ingredient].push(dish);
+      } else {
+        ingredients[ingredient] = [dish];
+      }
     }
   }
   const result = [];
   for (const ingredient in ingredients) {
     if (ingredients[ingredient].length > 1) {
-        result.push([ingredient, ...ingredients[ingredient].sort()]);
+      result.push([ingredient, ...ingredients[ingredient].sort()]);
     }
   }
   return result.sort();
